@@ -1,5 +1,5 @@
 
 ## About
-This is a test for a new *website* </br>
+This is a test for a new *website*
 ## Projects
 nettside
