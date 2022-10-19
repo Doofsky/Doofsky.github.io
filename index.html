@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Trym sin nettside</h1>
-<p> Dette er starten på min første nettsiden.</p>
-</body>
+    <header>
+        {% if page.use_math %}
+        {% include mathjax_support.html %}
+        {% endif %}
+    </header>
+    <body>
+        <h1>Trym sin nettside</h1>
+            <p> Dette er starten på min første nettsiden.</p>
+            <p>$$ K(a,b) = \int \mathcal{D}x(t) \exp(2\pi i S[x]/\hbar) $$</p>
+    </body>
 </html>
