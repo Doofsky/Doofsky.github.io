@@ -1,3 +1,3 @@
 layout: page
 title: "Proofs"
-permalink: /proofs
+permalink: trymsaether.github.io/proofs
