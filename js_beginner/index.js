@@ -1,2 +1,1 @@
-console.log("Suck my balls Mate!");
-console.log("Hello World!")
+console.log('Suck My Balls Mate')
