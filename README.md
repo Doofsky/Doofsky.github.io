@@ -1,4 +1,4 @@
-Perso
+Personal Website for Trym Sæther
 
 # Sources and credits:
 
