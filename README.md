@@ -1,9 +1,6 @@
-Personal Website for Trym Sæther
+My Personal Website, inspired by many others and fine tuned with my personal preferences.
 
 # Sources and credits:
-
-I've used the following resources as listed.
-
 ## Fonts:
  - Inter Font (https://fonts.google.com/specimen/Inter)
  - Castoro Font (https://fonts.google.com/specimen/Castoro)
