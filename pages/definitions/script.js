@@ -1,15 +1,6 @@
 // Sample data for mathematical definitions
 const definitions = [
   {
-    id: "quadratic-formula",
-    term: "Quadratic Formula",
-    definition: "The solution to the quadratic equation \\( ax^2 + bx + c = 0 \\) is given by:",
-    formula: "\\[ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\]",
-    image: "images/quadratic_formula.png", // Replace with actual image paths
-    tips: "Remember that the discriminant \\( b^2 - 4ac \\) determines the nature of the roots.",
-    examples: "Solve \\( x^2 - 5x + 6 = 0 \\) using the quadratic formula."
-  },
-  {
     id: "pythagorean-theorem",
     term: "Pythagorean Theorem",
     definition: "In a right-angled triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.",
@@ -18,7 +9,16 @@ const definitions = [
     tips: "Often used to calculate distances in coordinate geometry.",
     examples: "Find the length of the hypotenuse when the other sides are 3 and 4 units."
   },
-  // Add more definitions as needed
+  {
+    id: "binomial-teorem",
+    term: "Binomial Teorem",
+    definition: "Binomialteoremet er en formel for at udvide en binomisk ligning til en vilkårlig eksponent.",
+    formula: "\\[ (a + b)^n = \\sum_{k=0}^{n} {n \\choose k} a^{n-k} b^k \\]",
+    image: "images/binomial_theorem.png",
+    tips: "Used to expand binomial expressions.",
+    examples: "\\[ (x + y)^3 = x^3 + 3x^2y + 3xy^2 + y^3 \\]"
+  },
+  
 ];
 
 // Function to display definitions
@@ -37,27 +37,27 @@ function displayDefinitions(items) {
       </div>
       <div class="definition-content" id="content-${index}">
         <div class="definition-section">
-          <h6>Definition</h6>
+          <h6>Definisjoner</h6>
           <p>${item.definition}</p>
         </div>
         ${item.formula ? `
         <div class="definition-section">
-          <h6>Formula</h6>
+          <h6>Formler</h6>
           <p>${item.formula}</p>
         </div>` : ''}
         ${item.image ? `
         <div class="definition-section">
-          <h6>Illustration</h6>
+          <h6>Illustrasjon</h6>
           <img src="${item.image}" alt="${item.term}">
         </div>` : ''}
         ${item.tips ? `
         <div class="definition-section">
-          <h6>Tips and Tricks</h6>
+          <h6>Tips og Triks</h6>
           <p>${item.tips}</p>
         </div>` : ''}
         ${item.examples ? `
         <div class="definition-section">
-          <h6>Examples</h6>
+          <h6>Eksempler</h6>
           <p>${item.examples}</p>
         </div>` : ''}
       </div>
@@ -98,7 +98,7 @@ displayDefinitions(definitions);
 const backToTopButton = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 300) {
+  if (window.scrollY> 300) {
     backToTopButton.style.display = 'block';
   } else {
     backToTopButton.style.display = 'none';

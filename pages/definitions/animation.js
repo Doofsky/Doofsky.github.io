@@ -76,7 +76,7 @@ class Particle {
     // fill(hue, 80, 80, this.lifespan / 300 * 100);
 
     this.hue = random(0, 360);
-    this.size = random(3, 6);
+    this.size = random(2, 4);
     // this.size = random(2, 4); // Smaller particles
     // this.size = random(5, 8); // Larger particles
 
@@ -84,7 +84,7 @@ class Particle {
     // this.lifespan = 200; // Shorter lifespan
     // this.lifespan = 400; // Longer lifespan
 
-    this.mass = 1; // Add mass property
+    this.mass = 2; // Add mass property
   }
 
   update() {
@@ -96,7 +96,7 @@ class Particle {
     perpendicular.normalize();
 
     // Control the strength of the rotation
-    perpendicular.mult(0.05);
+    perpendicular.mult(0.1);
 
     // Apply rotational force
     this.acc.add(perpendicular);
@@ -105,9 +105,9 @@ class Particle {
     for (let attractor of attractors) {
       let force = p5.Vector.sub(attractor, this.pos);
       let distance = force.mag();
-      distance = constrain(distance, 5, 25); // Avoid extreme forces
+      distance = constrain(distance, 5, 100); // Avoid extreme forces
       force.normalize();
-      let strength = (10 * this.mass) / (distance * distance);
+      let strength = (100 * this.mass) / (distance * distance);
 
       force.mult(strength);
       this.acc.add(force);
