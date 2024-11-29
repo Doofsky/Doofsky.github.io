@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mathematical Definitions</title>
+    <!-- Bootstrap CSS -->
+    <link
+      id="bootstrapCSS"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
+    />
+    <!-- MathJax for LaTeX Rendering -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      defer
+    ></script>
+    <!-- p5.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    <!-- Include Plotly.js CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <!-- Header with Animation -->
+    <div id="animation-container">
+      <!-- The p5.js sketch will be injected here -->
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">MathDef</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Left side of the navbar -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Other navbar items can go here -->
+          </ul>
+          <!-- Right side of the navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Customization Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="customizationDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                title="Animation Settings"
+              >
+                <i class="fas fa-sliders-h"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="customizationDropdown"
+              >
+                <li class="px-3 py-2">
+                  <label for="pointWeight" class="form-label"
+                    >Point Weight</label
+                  >
+                  <input
+                    type="range"
+                    class="form-range"
+                    id="pointWeight"
+                    min="5"
+                    max="50"
+                    value="10"
+                  />
+                </li>
+                <li class="px-3 py-2">
+                  <label for="velocity" class="form-label">Velocity</label>
+                  <input
+                    type="range"
+                    class="form-range"
+                    id="velocity"
+                    min="0.5"
+                    max="5"
+                    step="0.1"
+                    value="1"
+                  />
+                </li>
+                <li class="px-3 py-2">
+                  <label for="curl" class="form-label">Curl</label>
+                  <input
+                    type="range"
+                    class="form-range"
+                    id="curl"
+                    min="0"
+                    max="5"
+                    step="0.1"
+                    value="1"
+                  />
+                </li>
+                <li class="px-3 py-2">
+                  <label for="divergence" class="form-label">Divergence</label>
+                  <input
+                    type="range"
+                    class="form-range"
+                    id="divergence"
+                    min="-5"
+                    max="5"
+                    step="0.1"
+                    value="0"
+                  />
+                </li>
+              </ul>
+            </li>
+            <!-- Add Definition Navbar Icon -->
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                id="addDefinitionNav"
+                role="button"
+                title="Add Definition"
+                data-bs-toggle="modal"
+                data-bs-target="#addDefinitionModal"
+              >
+                <i class="fas fa-plus-circle"></i>
+              </a>
+            </li>
+
+            <!-- Theme Toggle Button -->
+            <li class="nav-item">
+              <button
+                class="btn btn-toggle-mode nav-link"
+                id="themeToggle"
+                aria-label="Toggle dark mode"
+              >
+                <i class="fas fa-moon"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5">
+      <!-- Search Bar -->
+      <div class="row mb-4">
+        <div class="col-md-8 mx-auto">
+          <input
+            type="text"
+            id="searchBar"
+            class="form-control"
+            placeholder="Search definitions..."
+          />
+        </div>
+      </div>
+      <!-- Add Definition Button 
+      <div class="text-center mt-4">
+        <button id="addDefinitionBtn" class="btn btn-success">
+          Add New Definition
+        </button>
+      </div>
+      -->
+
+      <!-- Definitions List -->
+      <div class="definitions-list" id="definitionsList">
+        <!-- Definitions will be injected here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-primary">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Add Definition Modal -->
+    <div
+      class="modal fade"
+      id="addDefinitionModal"
+      tabindex="-1"
+      aria-labelledby="addDefinitionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addDefinitionModalLabel">
+              Define
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Form content -->
+            <form id="addDefinitionForm">
+              <!-- Form Fields -->
+              <div class="mb-3">
+                <label for="definitionId" class="form-label">ID:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="definitionId"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="definitionTerm" class="form-label">Term:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="definitionTerm"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="definitionText" class="form-label"
+                  >Definition</label
+                >
+                <textarea
+                  class="form-control"
+                  id="definitionText"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="definitionFormula" class="form-label"
+                  >Formula \((\small \LaTeX)\)</label
+                >
+                <textarea
+                  class="form-control"
+                  id="definitionFormula"
+                  rows="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="definitionTips" class="form-label">Tips</label>
+                <textarea
+                  class="form-control"
+                  id="definitionTips"
+                  rows="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="definitionExamples" class="form-label"
+                  >Example</label
+                >
+                <textarea
+                  class="form-control"
+                  id="definitionExamples"
+                  rows="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="definitionIntuition" class="form-label"
+                  >Intuition</label
+                >
+                <textarea
+                  class="form-control"
+                  id="definitionIntuition"
+                  rows="2"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="definitionPlotFunction" class="form-label"
+                  >Plot</label
+                >
+                <select class="form-select" id="definitionPlotFunction">
+                  <option value="false" selected>No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary mt-3">
+                Add
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- About Us -->
+          <div class="col-md-3 mb-3">
+            <h5>About MathDef</h5>
+            <p>
+              MathDef is a platform dedicated to providing clear and concise
+              mathematical definitions for students.
+            </p>
+          </div>
+          <!-- Social Media Links -->
+          <div class="col-md-3 mb-3">
+            <a href="#" class="me-2"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#" class="me-2"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#" class="me-2"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </footer>
+
+    <!-- Include Bootstrap Bundle JS (includes Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <!-- Animation JS -->
+    <script src="animation.js"></script>
+  </body>
+</html>

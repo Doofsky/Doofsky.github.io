@@ -1,5 +1,13 @@
+// animation.js
+
 let particles = [];
 let attractors = []; // Array to store attractor points
+
+// Customizable parameters
+let pointWeight = 10;
+let velocityMultiplier = 1;
+let curlStrength = 1;
+let divergenceStrength = 0;
 
 function setup() {
   const canvas = createCanvas(windowWidth, 800);
@@ -8,9 +16,11 @@ function setup() {
   colorMode(HSB, 360, 100, 100, 100);
   frameRate(30); // Slower frame rate
 
-  // Optionally, add predefined attractors
-  // attractors.push(createVector(windowWidth / 2 - 100, 200));
-  // attractors.push(createVector(windowWidth / 2 + 100, 200));
+  // Event listeners for controls
+  setupControls();
+
+  // Ensure that mouse interactions are confined to the canvas
+  canvas.mousePressed(canvasMousePressed);
 }
 
 function draw() {
@@ -40,12 +50,16 @@ function draw() {
     }
   }
 
-  // Optionally, draw attractors
+  // Draw attractors
   drawAttractors();
 }
 
-function mousePressed() {
-  attractors.push(createVector(mouseX, mouseY));
+function canvasMousePressed() {
+  // Add attractor at mouse position with specified weight
+  attractors.push({
+    position: createVector(mouseX, mouseY),
+    weight: pointWeight,
+  });
 }
 
 function drawAttractors() {
@@ -57,8 +71,7 @@ function drawAttractors() {
   }
   noStroke();
   for (let attractor of attractors) {
-    circle(attractor.x, attractor.y, 10);
-
+    circle(attractor.position.x, attractor.position.y, attractor.weight);
   }
 }
 
@@ -67,58 +80,50 @@ class Particle {
     this.pos = createVector(width / 2, height / 2);
     let angle = random(0, TWO_PI);
     this.vel = p5.Vector.fromAngle(angle);
-    this.vel.mult(0.5); // Set initial speed
+    this.vel.mult(0.5 * velocityMultiplier); // Adjust initial speed
     this.acc = createVector(0, 0);
-
-    // Hue based on speed
-    // let speed = this.vel.mag();
-    // let hue = map(speed, 0, 5, 0, 360);
-    // fill(hue, 80, 80, this.lifespan / 300 * 100);
 
     this.hue = random(0, 360);
     this.size = random(2, 4);
-    // this.size = random(2, 4); // Smaller particles
-    // this.size = random(5, 8); // Larger particles
-
     this.lifespan = 300;
-    // this.lifespan = 200; // Shorter lifespan
-    // this.lifespan = 400; // Longer lifespan
-
-    this.mass = 2; // Add mass property
+    this.mass = 2;
   }
 
   update() {
     // Direction from center to particle
     let dir = p5.Vector.sub(this.pos, createVector(width / 2, height / 2));
 
-    // Perpendicular vector to create rotational motion
+    // Perpendicular vector to create rotational motion (curl)
     let perpendicular = createVector(-dir.y, dir.x);
     perpendicular.normalize();
-
-    // Control the strength of the rotation
-    perpendicular.mult(0.1);
+    perpendicular.mult(0.1 * curlStrength);
 
     // Apply rotational force
     this.acc.add(perpendicular);
 
     // Attraction towards attractors
     for (let attractor of attractors) {
-      let force = p5.Vector.sub(attractor, this.pos);
+      let force = p5.Vector.sub(attractor.position, this.pos);
       let distance = force.mag();
       distance = constrain(distance, 5, 100); // Avoid extreme forces
       force.normalize();
-      let strength = (100 * this.mass) / (distance * distance);
+      let strength = (100 * this.mass * attractor.weight/10) / (distance * distance);
 
       force.mult(strength);
       this.acc.add(force);
     }
 
+    // Apply divergence
+    let center = createVector(width / 2, height / 2);
+    let fromCenter = p5.Vector.sub(this.pos, center);
+    fromCenter.normalize();
+    fromCenter.mult(divergenceStrength * 0.1);
+    this.acc.add(fromCenter);
+
     // Apply acceleration and update position
     this.vel.add(this.acc);
+    this.vel.mult(0.99); // Slow down particles over time (optional)
     this.pos.add(this.vel);
-
-    // Slow down particles over time (optional)
-    this.vel.mult(0.99);
 
     // Reset acceleration
     this.acc.mult(0);
@@ -152,5 +157,32 @@ class Particle {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, 400);
+  resizeCanvas(windowWidth, 800);
+}
+
+// Function to set up event listeners for the controls
+function setupControls() {
+  // Point Weight Slider
+  const pointWeightSlider = document.getElementById("pointWeight");
+  pointWeightSlider.addEventListener("input", function () {
+    pointWeight = parseFloat(this.value);
+  });
+
+  // Velocity Slider
+  const velocitySlider = document.getElementById("velocity");
+  velocitySlider.addEventListener("input", function () {
+    velocityMultiplier = parseFloat(this.value);
+  });
+
+  // Curl Slider
+  const curlSlider = document.getElementById("curl");
+  curlSlider.addEventListener("input", function () {
+    curlStrength = parseFloat(this.value);
+  });
+
+  // Divergence Slider
+  const divergenceSlider = document.getElementById("divergence");
+  divergenceSlider.addEventListener("input", function () {
+    divergenceStrength = parseFloat(this.value);
+  });
 }
