@@ -1,0 +1,34 @@
+Kjære [bedriftsnavn]
+
+Jeg ønsker med dette å søke på en stilling innen teknologi og IT-konsulentvirksomhet i deres bedrift. Jeg er nå i mitt tredje år på en mastergrad i fysikk og matematikk, og har gjennom utdannelsen og egne prosjekter opparbeidet en solid kompetanse innen numeriske beregninger, algoritmer, programmering og analyse. Jeg ble oppmerksom på muligheten til å jobbe hos dere gjennom min generelle interesse for teknologibransjen, og tror min brede kompetanse vil kunne tilføre verdifull ekspertise til deres konsulentteam.
+
+Jeg søker med dette på stillingen som [stillingsutlysning] hos dere, som virket veldig interessant. Som masterstudent i fysikk og matematikk har jeg utviklet solide ferdigheter innen numerisk analyse, algoritmer og programmering. Jeg tror min kompetanse vil styrke deres team og bidra til effektive, datadrevne løsninger.
+
+Teknisk profil:
+- Teknisk kompetanse: C++, Python, JavaScript, C#, R, Matlab
+- Faglig bakgrunn: Numerisk modellering, optimalisering, stokastiske metoder
+- Erfaring: Fourier-analyse, bildebehandling, databehandling innen kjemi, utvikling av egne prosjekter
+
+Gjennom studiene har jeg opparbeidet en dyptgående forståelse for matematikk, numerisk modellering, optimering, stokastisk analyse og algoritmedesign. I tillegg til min akademiske bakgrunn, har jeg praktisk erfaring med programmeringsspråk som C++, Python, JavaScript, C#, R og Matlab. Jeg har blant annet utviklet løsninger for numerisk analyse, Fourier-transformasjoner, bildebehandling, samt bidratt til prosjekter innen kjemi og dataanalyse. Denne tverrfaglige erfaringen gjør meg i stand til raskt å sette meg inn i komplekse problemstillinger og finne effektive løsninger.
+
+I tillegg til den tekniske siden, vil jeg trekke frem mine personlige kvaliteter: Jeg er strukturert, innovativ, kreativ og sosial. Jeg trives i team hvor vi sammen kan lære av hverandre, og jeg setter pris på å bidra til et godt arbeidsmiljø. Jeg jobber hardt, er fokusert, løsningsorientert og elsker å finne effektive svar på komplekse utfordringer. Disse egenskapene gjør meg fleksibel og tilpasningsdyktig, noe som er essensielt i konsulentrollen.
+
+Personlige egenskaper:
+- Strukturert og analytisk: Angriper problemer systematisk og nøyaktig
+- Kreativ og løsningsorientert: Liker å teste nye verktøy og tilnærminger
+- Lagspiller: Verdsetter kunnskapsdeling og samarbeidskultur
+
+Mitt GitHub-bibliotek viser alle prosjektene, og bredden i min kompetanse. Fra å bygge en egne nettsider med vekt på matematikk og algoritmer, til praktiske prosjekter innen maskinlæring, numeriske metoder og signalbehandling, har jeg vist min evne til å tilpasse meg ulike teknologier og verktøy. Som student i fysikk og matematikk har jeg lært å angripe problemstillinger systematisk, analysere data nøyaktig, og utvikle presise modeller. Denne kompetansen kombinerer jeg med solid programmeringsferdighet, noe som kan være verdifullt for en rekke bransjer – fra konsulentoppdrag i finans- og energisektoren til utvikling av teknologiske løsninger for industri og forskning.
+
+Jeg ønsker å bidra til deres prosjekter, enten det gjelder dataanalyse, optimalisering av arbeidsflyt eller utvikling av nye løsninger for kundene. Jeg håper på muligheten til å diskutere hvordan min erfaring kan støtte [bedriftsnavn]s satsning fremover.
+
+Takk for at dere vurderer min søknad. Jeg ser frem til muligheten til å ta en prat om videre samarbeid.
+
+Med vennlig hilsen,
+Trym Sæther
+
+Kontaktinformasjon:
+E-post: saether.trym@gmail.com
+Telefon: +47 99 50 88 10
+Nettside: TrymSæther.GitHub.io
+GitHub: GitHub.com/TrymSæther

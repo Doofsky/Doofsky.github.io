@@ -32,6 +32,48 @@
     ================================================== -->
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Add this style section in your head tag -->
+    <style>
+        .activity-card {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .activity-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .activity-card h4 {
+            margin-bottom: 10px;
+            color: var(--color-1);
+        }
+
+        .activity-card p {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .signature-block {
+            margin-top: 2rem;
+            text-align: right;
+        }
+        .signature-image {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+        .signature-text {
+            font-style: italic;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+    </style>
+
 </head>
 
 <body id="top" class="ss-preload">
@@ -69,20 +111,19 @@
     ================================================== -->
     <section id="hero" class="s-hero target-section">
 
-        <div class="s-hero__bg rellax" data-rellax-speed="-7"></div>
+        <div class="s-hero__bg rellax" data-rellax-speed="-8"></div>
 
         <div class="row s-hero__content">
-            <div class="column">
+            <div class="column" style="margin-top: 10rem;">
                 <div class="s-hero__content-about">
                     <h1>Trym Sæther</h1>
                     <h3>
-                    I'm a Norwegian <span>Engineering Student</span>, based at <span>NTNU, Trondheim</span>.<br> 
-                    Let's <a class="smoothscroll" href="#about">start scrolling</a> and learn more <a class="smoothscroll" href="#about">about me</a>.
+                    I am a Norwegian <span>Engineering Student</span> at <span>NTNU, Trondheim</span>.
+                    Specializing in <span>Industrial Mathematics (MSc)</span> and <span>Electrical Engineer (BSc)</span>.
+                    Academically passionate about <span>Science </span> and <span> Technology</span>.
+        
                     </h3>
-                    <!-- 
-                        Currently pursuing a combined degree in <span>Electrical Engineering (B.S) and Physics & Mathematics (MSc)</span>. 
-                        Passionate about <span>Science & Techonology</span>, this equipped me with hands-on experience in <span>Multiple Programming Languages</span> and <span>Microcontrollers</span>.
-                    -->
+                 
 
                     <div class="s-hero__content-social">
                         <a href="https://www.facebook.com/trym.saether"><i class="fab fa-facebook-square" aria-hidden="true"></i></a>
@@ -112,42 +153,30 @@
 
         <div class="row">
             <div class="column large-3 tab-12">
-                <img class="s-about__pic" src="images/avatars/user-06.jpeg" alt="">
+                <img class="s-about__pic" src="images/user-06.jpeg" alt="">
             </div>
             <div class="column large-9 tab-12 s-about__content">
                 <h3>About Me</h3>
                 <p>
-                Hello! I'm Trym Sæther, a quickwitted (current) student in Physics & Math (MsC), who tries to make my academic journey as fun and interactive as possible trough small and big projects. I like to use my analytical thinking and problem-solving skills both academically and in my personal life. 
-                I have a strong foundation now, after a few years on the school bench, in technology-driven subjects, such as programming (see below for what languages, and at what level i believe i am at), maths, physics and manymany more. My educational journey includes a focus on Physics and Mathematics at NTNU.
-                Beyond academics, I've had experiences such as refereeing Handball at the Norwegian top division, working with youth in Trondheim, and served as a medic in the Norwegian Armed Forces. 
-                My Personal Values are: 
+                As a Master's student in Physics & Mathematics at NTNU, I combine analytical thinking with practical problem-solving to create innovative solutions. My academic focus spans electrical engineering, advanced mathematics, and physics, complemented by extensive programming experience.
+
+                Throughout my academic journey, I've developed a strong foundation in technology-driven subjects, with particular expertise in numerical analysis, algorithm development, and data processing. My project portfolio demonstrates my ability to apply theoretical knowledge to practical challenges.
+
+                Beyond academics, my experience as a top-division handball referee has honed my decision-making abilities under pressure, while my work with youth in Trondheim and service as a medic in the Norwegian Armed Forces showcase my commitment to community engagement.
+                
+                <h6 style="color: white;">Core Values</h6>
+                - 100%: Commitment to delivering high-quality<br>
+                - Continuous learning: Embracing new technologies and methodologies<br>
+                - Collaborative growth: Contributing to team and personal development<br>
                 <br>
-                - When doing "something", always do it 100% - or don't do it at all (my father, ca 2000). <br>
-                - Personal growth, both for me and the people around me, is important for me. <br>
-                - Always learn and be accepting of new ideas, perspectives and challenges, even if they are trivial or hard! <br>
-                So let's connect and create something impactful together!
+
+                And also, thank you for visiting my website! Feel free to reach out to me for collaboration, project inquiries, or just to say hello!
                 </p>
-                <hr>
-                <div class="row s-about__content-bottom">
-                    <div class="column w-1000-stack">
-                        <h3>Contact Details</h3>
-    
-                        <p>
-                        Trym Sæther <br>
-                        7048, Trondheim <br>
-                        Norway<br>
-                        <a href="tel:+47 99 50 88 10">+47 99 50 88 10</a> <br>
-                        <a href="mailto:saether.trym@gmail.com">saether.trym@gmail.com></a>
-                        </p>
-                        
-                    </div>
-                    <div class="column w-1000-stack">
-                        <a href="images/CV_TrymSæther.pdf" class="btn btn--download" download="CV_TrymSæther">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform: -ms-filter;"><path d="M12 16L16 11 13 11 13 4 11 4 11 11 8 11z"></path><path d="M20,18H4v-7H2v7c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2v-7h-2V18z"></path></svg>
-                            Download CV
-                        </a>
-                    </div>
+                <div class="signature-block">
+                    <img src="images/my_signature_inverted.png" alt="Trym Sæther's Signature" class="signature-image">
+                    <p class="signature-text">Trym Sæther</p>
                 </div>
+                </p>
             </div>
         </div> <!-- end row -->
 
@@ -276,51 +305,43 @@
 
         <div class="row s-resume__section">
             <div class="column large-3 tab-12">
-                <h3 class="section-header-allcaps">Skills</h3>
+                <h3 class="section-header-allcaps">Programming Skills</h3>
             </div>
             <div class="column large-9 tab-12">
                 <div class="resume-block">
-
                     <p>
-                        My academic journey has equipped me with hands-on experience in projects involving 
-                        microcontrollers, automation, data processing, and circuit design. 
-                        I also possess skills in computer science and development, including data processing and analysis using Python, 
-                        and setting up and automating systems with microcontrollers, sensors, and databases.
+                        My technical expertise spans various programming languages and development environments. Through academic projects
+                        and personal initiatives, I've developed proficiency in software development, numerical computing, and data analysis.
+                        Below are my primary programming language competencies:
                     </p>
 
                     <ul class="skill-bars-fat">
                         <li>
-                        <div class="progress percent80"></div>
-                        <strong>Python</strong>
+                            <div class="progress percent100"></div>
+                            <strong>Python</strong>
                         </li>
                         <li>
-                        <div class="progress percent60"></div>
-                        <strong>C++</strong>
+                            <div class="progress percent95"></div>
+                            <strong>C++</strong>
                         </li>
                         <li>
-                        <div class="progress percent25"></div>
-                        <strong>HTML</strong>
+                            <div class="progress percent75"></div>
+                            <strong>JavaScript</strong>
                         </li>
                         <li>
-                        <div class="progress percent10"></div>
-                        <strong>CSS</strong>
+                            <div class="progress percent70"></div>
+                            <strong>Java</strong>
                         </li>
                         <li>
-                        <div class="progress percent10"></div>
-                        <strong>Javascript</strong>
+                            <div class="progress percent50"></div>
+                            <strong>MATLAB</strong>
                         </li>
                         <li>
-                        <div class="progress percent10"></div>
-                        <strong>java</strong>
-                        </li>
-                        <li>
-                        <div class="progress percent55"></div>
-                        <strong>Microcontrollers </strong>
+                            <div class="progress percent90"></div>
+                            <strong>HTML/CSS (Web Development)</strong>
                         </li>
                     </ul>
-
-                </div> <!-- end resume-block -->
-
+                </div>
             </div>
         </div> <!-- s-resume__section -->
 
@@ -346,21 +367,7 @@
                                  https://raw.githubusercontent.com/TrymSaether/MH_3DSurfacePlot/main/surfaceplot_MH.png 2x" alt="">
                 </a>
             </div> <!-- end folio-item -->
-            <div class="column folio-item">
-                <a href="https://github.com/TrymSaether/MH_3DSurfacePlot" class="folio-item__thumb">
-                    <img src="https://raw.githubusercontent.com/TrymSaether/MH_3DSurfacePlot/main/surfaceplot_MH.png" style="width:400px; height:320px;"
-                         srcset="https://raw.githubusercontent.com/TrymSaether/MH_3DSurfacePlot/main/surfaceplot_MH.png 1x, 
-                                 https://raw.githubusercontent.com/TrymSaether/MH_3DSurfacePlot/main/surfaceplot_MH.png 2x" alt="">
-                </a>
-            </div> <!-- end folio-item -->
-            <div class="column folio-item">
-                <a href="https://github.com/TrymSaether/MH_3DSurfacePlot" class="folio-item__thumb">
-                    <img src="https://raw.githubusercontent.com/TrymSaether/MH_3DSurfacePlot/main/surfaceplot_MH.png" style="width:400px; height:320px;"
-                         srcset="https://raw.githubusercontent.com/TrymSaether/MH_3DSurfacePlot/main/surfaceplot_MH.png 1x, 
-                                 https://raw.githubusercontent.com/TrymSaether/MH_3DSurfacePlot/main/surfaceplot_MH.png 2x" alt="">
-                </a>
-            </div> <!-- end folio-item -->
-
+            
             <div class="column folio-item">
                 <a href="https://github.com/TrymSaether/Smartklokke" class="folio-item__thumb">
                     <img src="https://raw.githubusercontent.com/TrymSaether/Smartklokke/20418f98b0e89ef1644cd675e08aaf25a5f946e4/smart-watch.svg" style="width:400px; height:320px;"
@@ -526,57 +533,64 @@
 
 
 
-    <!-- testimonials
+    <!-- testimonials/activities
     ================================================== -->
-    <section id="demo" class="s-testimonials target-section">
-
-        <div class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="demo"
-            </div>
-
+    <section id="testimonials" class="s-testimonials target-section">
         <div class="row s-testimonials__header">
             <div class="column large-12">
                 <h3>Activities</h3>
             </div>
-            <p>
-                On my spare time i enjoy a variety of activities, such as: 
-                Handball, Hiking, Skiing, Fishing, Hunting, Gaming, Reading, and more! <br>
-                Below you can see some of my latest activities.
-            </p>
         </div>
 
-        <div class="row s-testimonials__content">
+        <div class="row">
+            <div class="column large-3 tab-6">
+                <div class="activity-card">
+                    <img src="images/act_5.jpg" alt="Activity 1" class="activity-image">
+                    <h4>Handball</h4>
+                    <p>I have been a top-division handball referee in Norway since 2013, developing leadership and decision-making skills.</p>
+                </div>
+            </div>
+            
+            <div class="column large-3 tab-6">
+                <div class="activity-card">
+                    <img src="images/act_7.jpg" alt="Activity 2" class="activity-image">
+                    <h4>Outdoor Exploration</h4>
+                    <p>Active participant in Norway's rich outdoor traditions, like hiking, hunting, and fishing.</p>
+                </div>
+            </div>
+            
+            <div class="column large-3 tab-6">
+                <div class="activity-card">
+                    <img src="images/act_3.jpeg" alt="Activity 3" class="activity-image">
+                    <h4>Sports & Athletics</h4>
+                    <p>Passionate about sports and athletics, with a focus on physical & mental health, and well-being.</p>
+                </div>
+            </div>
+            
+            <div class="column large-3 tab-6">
+                <div class="activity-card">
+                    <img src="images/act_4.jpeg" alt="Activity 4" class="activity-image">
+                    <h4>Community Engagement</h4>
+                    <p>Active in community engagement, including work with youth in Trondheim and service as a medic in the Norwegian Armed Forces.</p>
 
-            <div class="column">
-
-            </div> <!-- end column -->
-
-        </div> <!-- end row -->
-
+                </div>
+            </div>
+        </div>
     </section> <!-- end s-testimonials -->
 
 
     <!-- contact
     ================================================== -->
+   <!-- contact
+    ================================================== -->
     <section id="contact" class="s-contact target-section">
-
-        <div class="row s-contact__header">
-            <div class="column large-12">
-                <h3 class="section-header-allcaps">Say "Tjohei" to me :)</h3>
-            </div>
-        </div>
 
         <div class="row s-contact__content">
 
             <div class="column large-7 medium-12">
-
-                <h4 class="huge-text" style="font-size: xx-large;">
-                Have a new project in mind? Let's collaborate and build something awesome. 
-                Let's turn that idea to an even greater product :)
-                </h4>
-
+                <h3 class="section-header-allcaps">Say "Tjohei" to me anytime, anywhere!</h3>
+                <div class="contact-block"><a href="mailto:saether.trym@gmail.com" class="mailtoui btn btn--primary h-full-width">Let's Talk</a>
+                </div>
             </div>
 
             <div class="column large-4 medium-12">
@@ -603,9 +617,7 @@
                         </div> <!-- end contact-block -->
                     </div>
 
-                    <div class="column large-12">
-                        <a href="mailto:saether.trym@gmail.com" class="mailtoui btn btn--primary h-full-width">Let's Talk</a>
-                    </div>
+                   
                 </div> <!-- end contact-infos -->
 
             </div>
